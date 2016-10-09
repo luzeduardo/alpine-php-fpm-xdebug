@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build -t luzeduardo/alpine-php-fpm-xdebug .
+  - docker run -p 9001:9000 --name alpine-php-fpm-xdebug -d luzeduardo/alpine-php-fpm-xdebug
+
+script:
+  - docker ps | grep -q alpine-php-fpm-xdebug
