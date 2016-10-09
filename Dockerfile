@@ -64,10 +64,8 @@ RUN wget http://xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz \
     && echo "xdebug.remote_handler=dbgp" >> /etc/php/php.ini \
     && echo "xdebug.remote_connect_back=1" >> /etc/php/php.ini \
     && echo "xdebug.remote_autostart=on" >> /etc/php/php.ini \
-    && echo "xdebug.remote_port=9004" >> /etc/php/php.ini \
-    && rm -rf /var/cache/apk/* \
-    && rm xdebug-$XDEBUG_VERSION.tgz && rm -rf xdebug-$XDEBUG_VERSION
-
+    && echo "xdebug.remote_port=9004" >> /etc/php/php.ini
+    
 # Bug pecl Alpine && Install php-memcached by PECL
 RUN sed -i "s/\ \-n\ / /" $(which pecl) && \
  cd /usr/local/ && pecl download memcached && tar -xf $(ls -1 memcached*); \
