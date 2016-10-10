@@ -24,4 +24,6 @@ ENV PHP_MAX_FILE_UPLOAD 200
 ENV PHP_MAX_POST        100M
 ```
 
+This version Xdebug is listening on port 9004
+
 Change it in `Dockerfile` and you can rebuild your image.
