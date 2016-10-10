@@ -78,6 +78,7 @@ RUN apk update && apk add --no-cache --virtual .build-deps autoconf gcc make \
     && rm -rf /var/cache/apk/* \
 
 #Cleanup
+&& rm -rf /tmp/* \
    && rm -rf /var/cache/apk/* \
    && apk del .build-deps
 
